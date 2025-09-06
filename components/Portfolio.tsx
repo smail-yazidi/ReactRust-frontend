@@ -269,22 +269,25 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [activeSection])
 
-  const fetchUserData = async () => {
-    try {
-      const backendUrl = "https://reactrust-backend-production.up.railway.app"
-      const res = await fetch(`${backendUrl}/api/userdata`)
+ const fetchUserData = async () => {
+  try {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`)
-      }
+    const res = await fetch(`${backendUrl}/api/userdata`);
 
-      const data = await res.json()
-      setMockData(data)
-    } catch (err) {
-    } finally {
-      setLoading(false)
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
+
+    const data = await res.json();
+    setMockData(data);
+  } catch (err) {
+    console.error("Failed to fetch user data:", err);
+  } finally {
+    setLoading(false);
   }
+};
+
 
   useEffect(() => {
     fetchUserData()
