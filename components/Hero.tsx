@@ -6,11 +6,10 @@ import { getIcon } from "../utils/icons";
 interface Props {
   userData: any;
   currentLang: "fr" | "en" | "ar";
-  themeClasses: any;
   isDarkMode?: boolean;
 }
 
-const Hero: React.FC<Props> = ({ userData, currentLang, themeClasses, isDarkMode }) => {
+const Hero: React.FC<Props> = ({ userData, currentLang,  isDarkMode }) => {
   const hero = userData.hero;
 
   return (
