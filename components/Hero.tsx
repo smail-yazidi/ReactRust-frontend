@@ -20,11 +20,12 @@ const Hero: React.FC<Props> = ({ userData, currentLang }) => {
 
         {/* Main Title */}
         {hero.heroTitle?.[currentLang] && (
-          <h1>
-            {hero.heroTitle[currentLang].split(' ').map((word, index) => (
-              <span key={index}>{word} </span>
-            ))}
-          </h1>
+            <h1>
+          {hero.heroTitle[currentLang].split(' ').map((word: string, index: number) => (
+            <span key={index}>{word} </span>
+          ))}
+            </h1>
+
         )}
 
         {/* Description */}
