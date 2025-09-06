@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -121,39 +121,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* Adding wave animation CSS for floating chat button */
-  @keyframes wave {
-    0% {
-      transform: scale(0.8);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  .wave-border-btn {
-    position: relative;
-  }
-
-  .wave-border-btn::before,
-  .wave-border-btn::after {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-    border: 2px solid #45b7d1;
-    border-radius: 50%;
-    animation: wave 2s ease-out infinite;
-    z-index: -1;
-  }
-
-  .wave-border-btn::after {
-    animation-delay: 1s;
   }
 }
