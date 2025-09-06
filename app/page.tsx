@@ -64,7 +64,7 @@ function App() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className={'min-h-screen transition-all duration-500 bg-black text-white'}>
       <Header 
         currentLang={currentLang} 
         setCurrentLang={setCurrentLang} 

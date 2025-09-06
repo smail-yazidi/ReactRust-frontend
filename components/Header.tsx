@@ -47,7 +47,7 @@ const Header: React.FC<Props> = ({
 
   return (
     <>
-      <header>
+      <header className="py-20">
         <div>
           <div>
             {/* Logo */}
